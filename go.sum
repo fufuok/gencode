@@ -1,5 +1,3 @@
-github.com/alecthomas/repr v0.0.0-20210801044451-80ca428c5142 h1:8Uy0oSf5co/NZXje7U1z8Mpep++QJOldL2hs/sBQf48=
-github.com/alecthomas/repr v0.0.0-20210801044451-80ca428c5142/go.mod h1:2kn6fqh/zIyPLmm3ugklbEi5hg5wS435eygvNfaDQL8=
 github.com/andyleap/parser v0.0.0-20160126201130-db5a13a7cd46 h1:t5xfxrFvtVIPcptfgVgE32rztLL1QfKAifRPxRxgppk=
 github.com/andyleap/parser v0.0.0-20160126201130-db5a13a7cd46/go.mod h1:optl5aMZUO+oj3KCDaQ0WYQMP6QhUQXXDAHQnCA3wI8=
 github.com/kr/pretty v0.2.1 h1:Fmg33tUaq4/8ym9TJN1x7sLJnHVwhP33CNkpYV/7rwI=
