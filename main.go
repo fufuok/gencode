@@ -7,8 +7,9 @@ import (
 	"log"
 	"os"
 
-	"github.com/andyleap/gencode/schema"
 	"github.com/kr/pretty"
+
+	"github.com/andyleap/gencode/schema"
 
 	_ "github.com/andyleap/gencode/backends/golang"
 )

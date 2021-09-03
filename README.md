@@ -1,4 +1,17 @@
 # Gencode
+
+极快的 Go 序列化/反序列化库. 零依赖.
+
+*forked from andyleap/gencode*
+
+```shell
+# 编译自身
+go build -o ./bin/gencode main.go 
+# 生成代码
+./bin/gencode go -schema ./example/person.gencode.schema -package example
+```
+
+# Gencode
 Gencode is a code generation based data serialization/deserialization system.  Gencode attempts to both encode/decode fast, and have a small data size.
 
 Code is generated from a schema that is similar to native Go semantics, though there are a few differences/additions
