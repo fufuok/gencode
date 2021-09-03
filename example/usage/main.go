@@ -8,27 +8,40 @@ import (
 )
 
 func main() {
-	src := example.Person{
+	data := example.Person{
 		Name: "Fufu@中 文",
 		Age:  18,
 	}
-	fmt.Printf("src:\n%#v\n", src)
+	fmt.Printf("data:\n%#v\n", data)
 
-	// 序列化
-	b, _ := src.Marshal(nil)
-	fmt.Printf("src.Marshal:\n%v\nlen:%d\n", b, len(b))
+	// gencode 序列化
+	b, _ := data.Marshal(nil)
+	fmt.Printf("gencode.Marshal:\n%v\nlen:%d\n", b, len(b))
 
-	// 反序列化
-	var dst example.Person
-	n, _ := dst.Unmarshal(b)
-	fmt.Printf("dst.Unmarshal:\n%#v\nlen:%d\n", dst, n)
+	// gencode 反序列化
+	var resGencode example.Person
+	n, _ := resGencode.Unmarshal(b)
+	fmt.Printf("gencode.Unmarshal:\n%#v\nlen:%d\n", resGencode, n)
 
 	fmt.Println("------")
 
-	// JSON 序列化对比
-	b, _= json.Marshal(src)
-	fmt.Printf("src.Marshal:\n%v\nlen:%d\n", b, len(b))
+	// msgp 序列化
+	b, _ = data.MarshalMsg(nil)
+	fmt.Printf("msgp.Marshal:\n%v\nlen:%d\n", b, len(b))
 
-	_ = json.Unmarshal(b, &dst)
-	fmt.Printf("dst.Unmarshal:\n%#v\n", dst)
+	// msgp 反序列化
+	var resMsgp example.Person
+	_, _ = resMsgp.UnmarshalMsg(b)
+	fmt.Printf("msgp.Unmarshal:\n%#v\n", resMsgp)
+
+	fmt.Println("------")
+
+	// JSON 序列化
+	b, _ = json.Marshal(data)
+	fmt.Printf("json.Marshal:\n%v\nlen:%d\n", b, len(b))
+
+	// JSON 反序列化
+	var resJSON example.Person
+	_ = json.Unmarshal(b, &resJSON)
+	fmt.Printf("json.Unmarshal:\n%#v\n", resJSON)
 }

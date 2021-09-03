@@ -1,8 +1,10 @@
 # Gencode
 
-极快的 Go 序列化/反序列化库. 零依赖.
+极快的 Go 序列化/反序列化库. 使用时零依赖.
 
 *forked from andyleap/gencode*
+
+## Gencode 使用
 
 ```shell
 # 编译自身
@@ -10,6 +12,19 @@ go build -o ./bin/gencode main.go
 # 生成代码
 ./bin/gencode go -schema ./example/person.gencode.schema -package example
 ```
+
+## MessagePack 使用
+
+```shell
+go get -u -t github.com/tinylib/msgp
+# 在结构体文件中加入 //go:generate msgp, 若加入 `msg:"a"` 可减少长度
+# 生成代码
+go generate 
+```
+
+`Gencode` 和 `msgp` 相比, `Gencode` 性能略好一些, 使用时无依赖. 但 `msgp` 是跨语言支持的, 更通用.
+
+**详见: example**
 
 # Gencode
 Gencode is a code generation based data serialization/deserialization system.  Gencode attempts to both encode/decode fast, and have a small data size.

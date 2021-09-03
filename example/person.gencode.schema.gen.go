@@ -106,3 +106,6 @@ func (d *Person) Unmarshal(buf []byte) (uint64, error) {
 	}
 	return i + 1, nil
 }
+
+// 下面这行与 gencode 无关, 复用结构体与 MessagePack 对比性能
+//go:generate msgp
